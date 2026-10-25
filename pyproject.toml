@@ -1,0 +1,153 @@
+[build-system]
+requires = ["uv_build>=0.12.21,<0.13"]
+build-backend = "uv_build"
+
+[project]
+name = "local-vs-global-skin-lesions"
+version = "0.1.0"
+description = "Skin lesion classification on the HAM10000 dermatoscopic image dataset."
+requires-python = "==3.15.*"
+license = "MIT"
+license-files = ["LICENSE"]
+keywords = ["skin-lesion", "dermatology", "ham10000", "image-classification", "deep-learning", "pytorch", "vit", "unet", "resnet"]
+classifiers = [
+    "Intended Audience :: Science/Research",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.14",
+    "Programming Language :: Python :: 3.15",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Scientific/Engineering :: Image Recognition",
+    "Topic :: Scientific/Engineering :: Medical Science Apps.",
+]
+authors = [
+    { name = "Vedran Hrabar", email = "vedran.hrabar@fer.unizg.hr" },
+    { name = "Alen Jurina", email = "alen.jurina@fer.unizg.hr" },
+    { name = "Karlo Krznar", email = "karlo.krznar@fer.unizg.hr" },
+    { name = "Antonio Tolić", email = "antonio.tolic@fer.unizg.hr" },
+    { name = "Roko Vrdoljak", email = "roko.vrdoljak@fer.unizg.hr" },
+]
+
+dependencies = [
+    "numpy==2.5.4",
+    "kaggle==2.2.5",
+    "matplotlib==3.11.2",
+    "albumentations==2.0.8",
+    "tqdm==4.70.1",
+    "pillow==13.0.0",
+    "kagglehub==1.0.3",
+    "kx-plot==0.5.0"
+]
+
+[project.scripts]
+lesion-lens = "lvg.main:main"
+
+[project.urls]
+Homepage = "https://www.fer.unizg.hr/predmet/neumre/"
+Repository = "https://github.com/vhrabar/local-vs-global-skin-lesions.git"
+Issues = "https://github.com/vhrabar/local-vs-global-skin-lesions/issues"
+Project = "https://github.com/vhrabar/projects/10"
+
+[dependency-groups]
+dev = [
+    "ruff==0.17.2",
+    "py-spy==0.4.2",
+    "types-tqdm==4.70.0.*",
+    "pytest==9.1.1",
+    "pyrefly==1.4.0",
+    "pre-commit==4.7.0",
+]
+cpu  = ["torch==2.14.1", "torchvision==0.29.1",]
+cuda = ["torch==2.14.1", "torchvision==0.29.1",]
+rocm = ["torch==2.14.1", "torchvision==0.29.1",]
+
+[tool.uv.build-backend]
+module-name = "lvg"
+
+[tool.uv]
+index-strategy = "unsafe-best-match"
+conflicts = [
+    [
+        { group = "cpu" },
+        { group = "cuda" },
+        { group = "rocm" },
+    ],
+]
+
+[tool.uv.sources]
+torch = [
+    { index = "pytorch-cpu", group = "cpu" },
+    { index = "pytorch-cu132", group = "cuda" },
+    { index = "pytorch-rocm714", group = "rocm" },
+]
+torchvision = [
+    { index = "pytorch-cpu", group = "cpu" },
+    { index = "pytorch-cu132", group = "cuda" },
+    { index = "pytorch-rocm714", group = "rocm" },
+]
+
+
+[[tool.uv.index]]
+name = "pytorch-cu132"
+url = "https://download.pytorch.org/whl/cu132"
+default = false
+explicit = true
+
+[[tool.uv.index]]
+name = "pytorch-cpu"
+url = "https://download.pytorch.org/whl/cpu"
+default = false
+explicit = true
+
+[[tool.uv.index]]
+name = "pytorch-rocm714"
+url = "https://download.pytorch.org/whl/rocm7.14"
+default = false
+explicit = false
+
+[tool.ruff]
+line-length = 130
+
+
+[tool.ruff.lint]
+select = [
+    "E",
+    "F",
+    "W",
+    "I",
+    "UP",
+    "B",
+    "SIM",
+    "NPY",
+    "RUF",
+    "ICN",
+    "C4",
+    "PIE",
+    "PERF",
+    "FURB",
+    "PTH",
+]
+ignore = [
+    "E501",
+    "RUF012",
+    "E741",
+]
+
+[tool.ruff.lint.per-file-ignores]
+"__init__.py"  = ["F401"]
+"*.ipynb"      = ["E402", "F401", "F811"]
+
+[tool.ruff.format]
+docstring-code-format = true
+
+
+[tool.pyrefly]
+project-includes = ["src", "scripts", "tests"]
+check-unannotated-defs = true
+min-severity = "warn"
+ignore-missing-imports = []
+
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = ["--import-mode=importlib"]
+filterwarnings = []
