@@ -1,0 +1,79 @@
+# -------------------------
+# Python
+# -------------------------
+
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+
+# virtual environments
+.venv/
+
+# pytest
+.pytest_cache/
+
+# Ruff / linters
+.ruff_cache/
+
+
+# -------------------------
+# LaTeX artifacts
+# -------------------------
+
+*.aux
+*.bbl
+*.blg
+*.log
+*.out
+*.toc
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.synctex(busy)
+
+# -------------------------
+# Editor / IDE
+# -------------------------
+
+.vscode/
+.idea/
+.run/
+
+# -------------------------
+# GitHub Actions artifacts
+# -------------------------
+
+artifacts/
+
+# -------------------------
+# Datasets
+# -------------------------
+
+data/
+
+
+# -------------------------
+# Fluff
+# -------------------------
+
+predictions/
+output/
+runs/
+
+
+# -------------------------
+# Training outputs / weights
+# -------------------------
+
+checkpoints/
+*.pt
+*.pth
+*.ckpt
+
+# -------------------------
+# Misc
+# -------------------------
+
+.ipynb_checkpoints/

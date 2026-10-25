@@ -1,0 +1,30 @@
+# Normalize line endings to LF in the repo
+* text=auto eol=lf
+
+# Source / config
+*.py        text diff=python
+*.toml      text
+*.yml       text
+*.yaml      text
+*.json      text
+*.md        text diff=markdown
+*.txt       text
+*.csv       text
+*.sh        text eol=lf
+*.tex       text diff=tex
+*.bib       text
+*.cls       text linguist-vendored
+
+# Notebooks
+*.ipynb     text eol=lf linguist-documentation
+
+# Generated files
+uv.lock         -diff linguist-generated
+report/main.pdf -diff linguist-generated
+
+# Binary assets
+*.png       binary
+*.jpg       binary
+*.jpeg      binary
+*.gif       binary
+*.pdf       binary
