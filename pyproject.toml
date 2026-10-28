@@ -56,9 +56,9 @@ dev = [
     "pyrefly==1.4.0",
     "pre-commit==4.7.0",
 ]
-cpu  = ["torch==2.14.1", "torchvision==0.29.1",]
-cuda = ["torch==2.14.1", "torchvision==0.29.1",]
-rocm = ["torch==2.14.1", "torchvision==0.29.1",]
+cpu  = ["torch==2.15.0", "torchvision==0.29.2",]
+cuda = ["torch==2.15.0", "torchvision==0.29.2",]
+rocm = ["torch==2.15.0", "torchvision==0.29.2",]
 
 [tool.uv.build-backend]
 module-name = "lvg"
@@ -76,19 +76,19 @@ conflicts = [
 [tool.uv.sources]
 torch = [
     { index = "pytorch-cpu", group = "cpu" },
-    { index = "pytorch-cu132", group = "cuda" },
-    { index = "pytorch-rocm714", group = "rocm" },
+    { index = "pytorch-cu134", group = "cuda" },
+    { index = "pytorch-rocm100", group = "rocm" },
 ]
 torchvision = [
     { index = "pytorch-cpu", group = "cpu" },
-    { index = "pytorch-cu132", group = "cuda" },
-    { index = "pytorch-rocm714", group = "rocm" },
+    { index = "pytorch-cu134", group = "cuda" },
+    { index = "pytorch-rocm100", group = "rocm" },
 ]
 
 
 [[tool.uv.index]]
-name = "pytorch-cu132"
-url = "https://download.pytorch.org/whl/cu132"
+name = "pytorch-cu134"
+url = "https://download.pytorch.org/whl/cu134"
 default = false
 explicit = true
 
@@ -99,8 +99,8 @@ default = false
 explicit = true
 
 [[tool.uv.index]]
-name = "pytorch-rocm714"
-url = "https://download.pytorch.org/whl/rocm7.14"
+name = "pytorch-rocm100"
+url = "https://download.pytorch.org/whl/rocm10.0"
 default = false
 explicit = false
 
