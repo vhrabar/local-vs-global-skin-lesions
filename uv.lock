@@ -750,6 +750,7 @@ dev = [
     { name = "ipykernel" },
     { name = "pre-commit" },
     { name = "py-spy" },
+    { name = "pympler" },
     { name = "pyrefly" },
     { name = "pytest" },
     { name = "ruff" },
@@ -790,6 +791,7 @@ dev = [
     { name = "ipykernel", specifier = "==7.4.0" },
     { name = "pre-commit", specifier = "==4.7.0" },
     { name = "py-spy", specifier = "==0.4.2" },
+    { name = "pympler", specifier = "==1.1" },
     { name = "pyrefly", specifier = "==1.4.0" },
     { name = "pytest", specifier = "==9.1.1" },
     { name = "ruff", specifier = "==0.17.2" },
@@ -1506,6 +1508,18 @@ wheels = [
 ]
 
 [[package]]
+name = "pympler"
+version = "1.1"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "pywin32", marker = "sys_platform == 'win32'" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/dd/37/c384631908029676d8e7213dd956bb686af303a80db7afbc9be36bc49495/pympler-1.1.tar.gz", hash = "sha256:1eaa867cb8992c218430f1708fdaccda53df064144d1c5656b1e6f1ee6000424", size = 179954, upload-time = "2024-06-28T19:56:06.563Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/79/4f/a6a2e2b202d7fd97eadfe90979845b8706676b41cbd3b42ba75adf329d1f/Pympler-1.1-py3-none-any.whl", hash = "sha256:5b223d6027d0619584116a0cbc28e8d2e378f7a79c1e5e024f9ff3b673c58506", size = 165766, upload-time = "2024-06-28T19:56:05.087Z" },
+]
+
+[[package]]
 name = "pyparsing"
 version = "3.3.3"
 source = { registry = "https://pypi.org/simple" }
@@ -1621,6 +1635,16 @@ wheels = [
     { url = "https://files.pythonhosted.org/packages/97/e3/e8208bc3fcd60f888938cabf486746e6e283add7aa439fa2d88f4f0910f3/pywavelets-1.10.0-cp315-cp315t-win32.whl", hash = "sha256:266e0497f879882cddd75bf60f292f0b1c1ef655cc8438f238a421ea82d0d212", size = 4222268, upload-time = "2026-09-07T17:15:09.901Z" },
     { url = "https://files.pythonhosted.org/packages/c1/7c/731a5d9c225a16d29ae03c3590a1ca1421bdc0d79990cfe49ea87876d37d/pywavelets-1.10.0-cp315-cp315t-win_amd64.whl", hash = "sha256:417a6922a8e1c881554fe2c48317122847a77098a6e75abc50e8ed45d4f616a4", size = 4325875, upload-time = "2026-09-07T17:15:11.456Z" },
     { url = "https://files.pythonhosted.org/packages/51/64/e804d85071792eb611151645e33e12b6d41d6c896ca5bbbdde0eec5f942b/pywavelets-1.10.0-cp315-cp315t-win_arm64.whl", hash = "sha256:7957b09e35574a46cba46ff9f1b1bc8e9a3f40692d142f98a36efadbcdcce1b0", size = 4216017, upload-time = "2026-09-07T17:15:13.284Z" },
+]
+
+[[package]]
+name = "pywin32"
+version = "312"
+source = { registry = "https://pypi.org/simple" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/eb/61/caa39686032d2ebdd04ff0ab5cbe163126c0066d98e00c9018646e42393b/pywin32-312-cp315-cp315-win32.whl", hash = "sha256:5c1fbe4a937a73ae9297384a3da38518cbc694c68ad8a809b2e19acd350f03ed", size = 6471159, upload-time = "2026-06-04T07:49:50.035Z" },
+    { url = "https://files.pythonhosted.org/packages/0f/cd/7e1de64a4a6f69c04214169657ccab0d93a670ea50e35eb8f489d7378249/pywin32-312-cp315-cp315-win_amd64.whl", hash = "sha256:c2f03a0f73f804a13c2735b99392b0cd426bb4f2c4d0178e5ac966a0f21618d5", size = 7025293, upload-time = "2026-06-04T07:49:54.857Z" },
+    { url = "https://files.pythonhosted.org/packages/23/ed/4532e9388e65fa16b46776ef47ad631a64eda1631884488af707666350ed/pywin32-312-cp315-cp315-win_arm64.whl", hash = "sha256:a8597d28f267b39074aef51fa593530082b39cbe5a074226096857b1fed2dfb9", size = 6840337, upload-time = "2026-06-04T07:49:57.531Z" },
 ]
 
 [[package]]
