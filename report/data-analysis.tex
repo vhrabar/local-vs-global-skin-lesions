@@ -28,11 +28,11 @@ Inputs are $600\times450$ RGB dermoscopic images (Fig.~\ref{fig:samples}) with b
 Labels are seven diagnoses (Table~\ref{tab:classes}), confirmed by histopathology for 53.3\% of images and otherwise by follow-up, expert consensus, or confocal microscopy.
 Classes range from 66.9\% of images for nv to 1.1\% for df, a 58:1 imbalance (Fig.~\ref{fig:classes}).
 
-The data will be divided into training and validation folds grouped by lesion, because 44.9\% of images show lesions photographed more than once.
+The data will be divided into training and validation folds grouped by lesion, because 44.9\% of images show lesions photographed more than once (Fig.~\ref{fig:splits}).
 
 All 10,015 images were successfully decoded and matched with their metadata and segmentation masks. No missing or corrupted files were found. All masks contained only binary values after grayscale conversion. Two masks covered the entire image, while none were empty. We also identified two pairs of identical images, both belonging to the same lesion.
 
-Using the segmentation masks, we calculated the percentage of each image covered by the lesion. The mean lesion area was 26.63\%, with a median of 22.23\% and a standard deviation of 18.84 percentage points. Values ranged from 0.39\% to 100\%. The median lesion area also differed between diagnostic classes, ranging from 9.88\% for vasc to 40.09\% for akiec. 
+Using the segmentation masks, we calculated the percentage of each image covered by the lesion. The mean lesion area was 26.63\%, with a median of 22.23\% and a standard deviation of 18.84 percentage points. Values ranged from 0.39\% to 100\%. The median lesion area also differed between diagnostic classes, ranging from 9.88\% for vasc to 40.09\% for akiec.
 
 The RGB channel means [0.764, 0.546, 0.571] differ substantially from those of ImageNet, so ImageNet statistics will be used only for pretrained models.
 Image properties differ strongly between sources (Table~\ref{tab:props}).
@@ -74,7 +74,15 @@ Near-black & 3.4 & -- & -- & -- & -- & 1.8 & 8.6 & 0.0 & 3.2 \\
 
 \begin{figure}[t]
 \centering
-% \includegraphics[width=\columnwidth]{figures/class_distribution}
-\caption{Label distribution and the share of each class contributed by each source.}
+\includegraphics[width=\columnwidth]{figures/label_distribution}\\[2pt]
+\includegraphics[width=\columnwidth]{figures/class_share}
+\caption{Label distribution (top) and the share of each class contributed by each source (bottom).}
 \label{fig:classes}
+\end{figure}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.8\columnwidth]{figures/split_distribution}
+\caption{Class distribution across the training, validation and test splits.}
+\label{fig:splits}
 \end{figure}
