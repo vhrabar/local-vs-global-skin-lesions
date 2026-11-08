@@ -38,11 +38,19 @@ Zagreb, Croatia\\
 \end{abstract}
 
 \begin{IEEEkeywords}
-
+computational efficiency, convolutional neural networks, dermoscopy, HAM10000, skin lesion classification, vision transformers
 \end{IEEEkeywords}
 
-\section{Introduction}
+\section{Introduction}\label{sec:introduction}
+Deep neural networks can easilly match dermatologists on skin cancer classification tasks~\cite{b1}, which has made automated image analysis a route to an efficent and cost-effective detection.
+Publicly avaiable datasets such as HAM10000~\cite{b2} make it possible to train and compare such models, but class imbalance, limited data and image selection bias~\cite{b3} make reliable evaluation difficult in the real-life conditions
 
+Accuracy alone also gives an incomplete comparison, due to class imbalance and differnet severity of confusions.
+Lesion segmentation masks do not consistently improve classification and removing the background context can even reduce accuracy~\cite{b6}, so the value of mask information depends on how it is used.
+
+In this project, we will compare local and global models for seven-class skin lesion classification on HAM10000, with an emphasis on the resources each model requires.
+ResNet-18, ResNet-34 and ResNet-50 represent convolutional models of increasing size, and ViT-S/16 represents the transformer family.
+Furthermore, we will also evaluate a U-Net-based approch with a ResNet-34 encoder and a classification head, and investigate mask-assisted classification.
 
 \section{Relevant Literature}
 The potential of deep learning for skin cancer
