@@ -23,24 +23,24 @@ All & 10015 & 7470 & 50 & .291 & .227 & .211 & .420 & .320 & 24.8 & 17.3 & 28.8 
 \end{tabular}
 \end{table*}
 
-We use HAM10000~\cite{b2}, obtained from the Harvard Dataverse, which was collected to train and benchmark automated diagnosis of pigmented skin lesions and contains 10,015 images of 7,470 lesions from four sources in Austria and Australia.
-Inputs are $600\times450$ RGB dermoscopic images (Fig.~\ref{fig:samples}) with binary lesion masks, age, sex and body site.
-Labels are seven diagnoses (Table~\ref{tab:classes}), confirmed by histopathology for 53.3\% of images and otherwise by follow-up, expert consensus or confocal microscopy.
+We use HAM10000~\cite{b2}, obtained from the Harvard Dataverse. It was collected to train and benchmark automated diagnosis of pigmented skin lesions and contains 10,015 images of 7,470 lesions from four sources in Austria and Australia.
+Inputs are $600\times450$ RGB dermoscopic images (Fig.~\ref{fig:samples}) with binary lesion masks, age, sex, and body site.
+Labels are seven diagnoses (Table~\ref{tab:classes}), confirmed by histopathology for 53.3\% of images and otherwise by follow-up, expert consensus, or confocal microscopy.
 Classes range from 66.9\% of images for nv to 1.1\% for df, a 58:1 imbalance (Fig.~\ref{fig:classes}).
 
-Data will be divided into training and validation folds grouped by lesion, because 44.9\% of images show lesions photographed more than once.
+The data will be divided into training and validation folds grouped by lesion, because 44.9\% of images show lesions photographed more than once.
 
-RGB means [0.764, 0.546, 0.571] are far from ImageNet's, so ImageNet statistics are used only for pretrained models.
+The RGB channel means [0.764, 0.546, 0.571] differ substantially from those of ImageNet, so ImageNet statistics will be used only for pretrained models.
 Image properties differ strongly between sources (Table~\ref{tab:props}).
 
-Source is correlated to the diagnosis: \texttt{vidir\_molemax} is 94.1\% nv and 0.6\% mel, and differs visibly in appearance from the other sources (Fig.~\ref{fig:classes}).
-Class-level trends can reverse within a source (Table~\ref{tab:classes}): saturation is higher for nv than mel overall, but lower in three of four sources, so a model may learn the source rather than the lesion itself.
+Source is correlated with the diagnosis: \texttt{vidir\_molemax} is 94.1\% nv and 0.6\% mel, and differs visibly in appearance from the other sources (Fig.~\ref{fig:classes}).
+Class-level trends can reverse within a source (Table~\ref{tab:classes}): saturation is higher for nv than for mel overall, but lower in three of four sources, so a model may learn the source rather than the lesion itself.
 
-Heuristically detected dark corners (vignette), affect 26.2\% of mel, but only 7.8\% of nv images, and 32.2\% of \texttt{vidir\_modern} images; hair affects 12.6\% of images.
+Heuristically detected dark corners (vignettes) affect 26.2\% of mel but only 7.8\% of nv images, and 32.2\% of \texttt{vidir\_modern} images; hair affects 12.6\% of images.
 The most extreme images in sharpness and exposure were inspected visually.
 
-We expect vasc to be easily detectable (distinctive red hue, $\Delta E \approx$ 32.3), while low-contrast akiec and bcc ($\Delta E\approx11$), mel versus nv, and rare df should be harder.
-Training will use crops, flips, rotations, mild color jitter guided by source differences, and a class-independent vignette in order to avoid data poisoing by exoisting ones.
+We expect vasc to be easily detectable (distinctive red hue, $\Delta E \approx 32.3$), while low-contrast akiec and bcc ($\Delta E\approx11$), mel versus nv, and rare df should be harder.
+Training will use crops, flips, rotations, mild color jitter guided by source differences, and a class-independent vignette in order to avoid data poisoning by existing ones.
 
 \begin{table}[t]
 \caption{Per-Image Properties}

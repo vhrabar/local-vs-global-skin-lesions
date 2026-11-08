@@ -20,6 +20,12 @@
 | Antonio Tolić | [@antonio.tolic](https://github.com/antonio.tolic) | Team Member | [EDA](https://github.com/vhrabar/local-vs-global-skin-lesions/issues/3), [Augmentation](https://github.com/vhrabar/local-vs-global-skin-lesions/issues/5), [ResNets](https://github.com/vhrabar/local-vs-global-skin-lesions/issues/10), [Report](https://github.com/vhrabar/local-vs-global-skin-lesions/issues/13)                                                                                                                                                                                                                                                                       |
 | Roko Vrdoljak | [@Rolex134](https://github.com/Rolex134)           | Team Member | [EDA](https://github.com/vhrabar/local-vs-global-skin-lesions/issues/3), [Experiment framework](https://github.com/vhrabar/local-vs-global-skin-lesions/issues/4), [Evaluation metrics](https://github.com/vhrabar/local-vs-global-skin-lesions/issues/6), [Efficiency metrics](https://github.com/vhrabar/local-vs-global-skin-lesions/issues/7), [ViT-S/16](https://github.com/vhrabar/local-vs-global-skin-lesions/issues/9), [ResNets](https://github.com/vhrabar/local-vs-global-skin-lesions/issues/10), [Report](https://github.com/vhrabar/local-vs-global-skin-lesions/issues/13) |
 
+## AI Usage Disclaimer
+In accordance to the class policy, generative AI tools were used exclusively for:
+- Grammar and linguistic checks
+- LaTeX formatting corrections
+
+All affected commits are marked with the `Assisted-by: <Tool>, <Model> (spec)` tag
 
 ## License
 This project is licensed under the [MIT](LICENSE) license.

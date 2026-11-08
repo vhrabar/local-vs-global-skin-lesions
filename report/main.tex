@@ -42,15 +42,15 @@ computational efficiency, convolutional neural networks, dermoscopy, HAM10000, s
 \end{IEEEkeywords}
 
 \section{Introduction}\label{sec:introduction}
-Deep neural networks can easilly match dermatologists on skin cancer classification tasks~\cite{b1}, which has made automated image analysis a route to an efficent and cost-effective detection.
-Publicly avaiable datasets such as HAM10000~\cite{b2} make it possible to train and compare such models, but class imbalance, limited data and image selection bias~\cite{b3} make reliable evaluation difficult in the real-life conditions
+Deep neural networks can easily match dermatologists on skin cancer classification tasks~\cite{b1}, which has made automated image analysis a route to efficient and cost-effective detection.
+Publicly available datasets such as HAM10000~\cite{b2} make it possible to train and compare such models, but class imbalance, limited data, and image selection bias~\cite{b3} make reliable evaluation difficult in real-life conditions.
 
-Accuracy alone also gives an incomplete comparison, due to class imbalance and differnet severity of confusions.
-Lesion segmentation masks do not consistently improve classification and removing the background context can even reduce accuracy~\cite{b6}, so the value of mask information depends on how it is used.
+Accuracy alone also gives an incomplete comparison due to class imbalance and the unequal severity of misclassifications.
+Lesion segmentation masks do not consistently improve classification, and removing the background context can even reduce accuracy~\cite{b6}, so the value of mask information depends on how it is used.
 
 In this project, we will compare local and global models for seven-class skin lesion classification on HAM10000, with an emphasis on the resources each model requires.
-ResNet-18, ResNet-34 and ResNet-50 represent convolutional models of increasing size, and ViT-S/16 represents the transformer family.
-Furthermore, we will also evaluate a U-Net-based approch with a ResNet-34 encoder and a classification head, and investigate mask-assisted classification.
+ResNet-18, ResNet-34, and ResNet-50 represent convolutional models of increasing size, and ViT-S/16 represents the transformer family.
+We will also evaluate a U-Net-based approach with a ResNet-34 encoder and a classification head, and investigate mask-assisted classification.
 
 \section{Relevant Literature}
 The potential of deep learning for skin cancer
@@ -77,22 +77,22 @@ A systematic review conducted by Kassem et al.
 classification. The authors identified major
 challenges such as limited datasets, image
 selection bias, and variations in skin color.
-These findings highlight the importance of
+These findings underscore the importance of
 reliable evaluation methods and appropriate
 data preprocessing.
 
 Several studies have investigated the performance
 of CNNs and vision transformers (ViTs) for skin
-lesion classification. One such study \cite{b4}
+lesion classification. One such study~\cite{b4}
 compared ResNet-152 and ViT on the HAM10000
-dataset. The ViT achieved an accuracy of 98.28\%,
+dataset. ViT achieved an accuracy of 98.28\%,
 compared to 96.70\% for ResNet-152. Although
 ViT achieved higher classification accuracy,
-the authors also highlighted its computational
+the authors also noted its computational
 requirements and risk of overfitting.
 
 A broader comparison of CNN and transformer-based
-models was conducted by Aruk et al. \cite{b5}
+models was conducted by Aruk et al.~\cite{b5}
 using the HAM10000 and ISIC 2019 datasets.
 Their findings showed that transformer-based
 architectures can achieve competitive
@@ -103,7 +103,7 @@ of data augmentation and transfer learning.
 
 The influence of lesion segmentation on
 classification performance was investigated
-by Mahbod et al. \cite{b6}. Their results showed
+by Mahbod et al.~\cite{b6}. Their results showed
 that segmentation masks do not consistently
 improve classification performance. Removing
 the background could even reduce accuracy by
@@ -112,7 +112,7 @@ discarding useful contextual information.
 In addition to classification accuracy,
 computational efficiency is another important
 factor when comparing deep learning models.
-Ecer et al. \cite{b7} compared ResNet-50,
+Ecer et al.~\cite{b7} compared ResNet-50,
 EfficientNet-B3, and ViT-B/16 on the HAM10000
 dataset. All three models achieved similar
 accuracy, ranging from 80.7\% to 81.7\%.
