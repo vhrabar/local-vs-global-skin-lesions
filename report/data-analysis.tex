@@ -31,6 +31,7 @@ Classes range from 66.9\% of images for nv to 1.1\% for df, a 58:1 imbalance (Fi
 Data will be divided into training and validation folds grouped by lesion, because 44.9\% of images show lesions photographed more than once.
 
 RGB means [0.764, 0.546, 0.571] are far from ImageNet's, so ImageNet statistics are used only for pretrained models.
+Image properties differ strongly between sources (Table~\ref{tab:props}).
 
 Source is correlated to the diagnosis: \texttt{vidir\_molemax} is 94.1\% nv and 0.6\% mel, and differs visibly in appearance from the other sources (Fig.~\ref{fig:classes}).
 Class-level trends can reverse within a source (Table~\ref{tab:classes}): saturation is higher for nv than mel overall, but lower in three of four sources, so a model may learn the source rather than the lesion itself.
@@ -40,6 +41,25 @@ The most extreme images in sharpness and exposure were inspected visually.
 
 We expect vasc to be easily detectable (distinctive red hue, $\Delta E \approx$ 32.3), while low-contrast akiec and bcc ($\Delta E\approx11$), mel versus nv, and rare df should be harder.
 Training will use crops, flips, rotations, mild color jitter guided by source differences, and a class-independent vignette in order to avoid data poisoing by exoisting ones.
+
+\begin{table}[t]
+\caption{Per-Image Properties}
+\label{tab:props}
+\centering
+\footnotesize
+\setlength{\tabcolsep}{2.5pt}
+\begin{tabular}{lccccc|cccc}
+\hline
+Property & Mean & Med & Min & Max & Std & Ros & Mod & Mol & Dias \\
+\hline
+Brightness & .765 & .774 & .323 & .997 & .097 & .751 & .693 & .839 & .753 \\
+Contrast & .109 & .101 & .019 & .335 & .045 & .088 & .115 & .096 & .144 \\
+Saturation & .306 & .291 & .035 & .710 & .118 & .227 & .211 & .420 & .320 \\
+Sharpness & 1.89 & 1.83 & 0.94 & 3.68 & 0.34 & 1.93 & 1.82 & 1.76 & 2.10 \\
+Near-black & 3.4 & -- & -- & -- & -- & 1.8 & 8.6 & 0.0 & 3.2 \\
+\hline
+\end{tabular}
+\end{table}
 
 \begin{figure}[t]
 \centering
