@@ -46,6 +46,87 @@ component, formatting, style, styling, insert.
 This document is a model and instructions for \LaTeX.
 Please observe the conference page limits. For more information about how to become an IEEE Conference author or how to write your paper, please visit   IEEE Conference Author Center website: https://conferences.ieeeauthorcenter.ieee.org/.
 
+\section{Relevant Literature}
+The potential of deep learning for skin cancer
+classification was demonstrated by Esteva et al.
+\cite{b1}, who trained a convolutional neural network
+(CNN) on 129,450 clinical images covering 2,032
+skin diseases. Their model achieved performance
+comparable to dermatologists on selected skin
+cancer classification tasks, highlighting the
+potential for accessible and cost-effective
+skin cancer detection.
+
+The HAM10000 dataset, introduced by Tschandl et al.
+\cite{b2}, contains 10,015 dermoscopic images
+across seven diagnostic categories. It provides
+a foundation for training and evaluating skin
+lesion classification models. However, its
+class imbalance presents a challenge when
+evaluating model performance.
+
+A systematic review conducted by Kassem et al.
+\cite{b3} examined 53 machine learning and
+49 deep learning methods for skin lesion
+classification. The authors identified major
+challenges such as limited datasets, image
+selection bias, and variations in skin color.
+These findings highlight the importance of
+reliable evaluation methods and appropriate
+data preprocessing.
+
+Several studies have investigated the performance
+of CNNs and vision transformers (ViTs) for skin
+lesion classification. One such study \cite{b4}
+compared ResNet-152 and ViT on the HAM10000
+dataset. The ViT achieved an accuracy of 98.28\%,
+compared to 96.70\% for ResNet-152. Although
+ViT achieved higher classification accuracy,
+the authors also highlighted its computational
+requirements and risk of overfitting.
+
+A broader comparison of CNN and transformer-based
+models was conducted by Aruk et al. \cite{b5}
+using the HAM10000 and ISIC 2019 datasets.
+Their findings showed that transformer-based
+architectures can achieve competitive
+classification performance and that larger
+models do not necessarily outperform smaller
+ones. The study also investigated the effects
+of data augmentation and transfer learning.
+
+The influence of lesion segmentation on
+classification performance was investigated
+by Mahbod et al. \cite{b6}. Their results showed
+that segmentation masks do not consistently
+improve classification performance. Removing
+the background could even reduce accuracy by
+discarding useful contextual information.
+
+In addition to classification accuracy,
+computational efficiency is another important
+factor when comparing deep learning models.
+Ecer et al. \cite{b7} compared ResNet-50,
+EfficientNet-B3, and ViT-B/16 on the HAM10000
+dataset. All three models achieved similar
+accuracy, ranging from 80.7\% to 81.7\%.
+However, ViT required substantially more energy,
+suggesting that higher computational costs
+do not necessarily lead to better classification
+performance.
+
+Finally, a framework combining segmentation
+and classification was proposed by Fiaz et al.
+\cite{b8}. The authors used U-Net with a
+ResNet-34 encoder for skin lesion segmentation
+and EfficientNet-B0 for classification.
+On the HAM10000 dataset, their model achieved
+85.57\% classification accuracy and a Dice
+score of 0.8622 for segmentation. These results
+demonstrate the potential of combining
+segmentation and classification for skin
+lesion analysis.
+
 \subsection{Maintaining the Integrity of the Specifications}
 
 The IEEEtran class file is used to format your paper and style the text. All margins,
@@ -243,20 +324,14 @@ For papers published in translation journals, please give the English
 citation first, followed by the original foreign-language citation \cite{b6}.
 
 \begin{thebibliography}{00}
-\bibitem{b1} G. Eason, B. Noble, and I. N. Sneddon, ``On certain integrals of Lipschitz-Hankel type involving products of Bessel functions,'' Phil. Trans. Roy. Soc. London, vol. A247, pp. 529--551, April 1955.
-\bibitem{b2} J. Clerk Maxwell, A Treatise on Electricity and Magnetism, 3rd ed., vol. 2. Oxford: Clarendon, 1892, pp.68--73.
-\bibitem{b3} I. S. Jacobs and C. P. Bean, ``Fine particles, thin films and exchange anisotropy,'' in Magnetism, vol. III, G. T. Rado and H. Suhl, Eds. New York: Academic, 1963, pp. 271--350.
-\bibitem{b4} K. Elissa, ``Title of paper if known,'' unp\begin{figure}[htbp]
-\caption{Example of a figure caption.}
-\label{fig}
-\end{figure}ublished.
-\bibitem{b5} R. Nicole, ``Title of paper with only first word capitalized,'' J. Name Stand. Abbrev., in press.
-\bibitem{b6} Y. Yorozu, M. Hirano, K. Oka, and Y. Tagawa, ``Electron spectroscopy studies on magneto-optical media and plastic substrate interface,'' IEEE Transl. J. Magn. Japan, vol. 2, pp. 740--741, August 1987 [Digests 9th Annual Conf. Magnetics Japan, p. 301, 1982].
-\bibitem{b7} M. Young, The Technical Writer's Handbook. Mill Valley, CA: University Science, 1989.
-\bibitem{b8} D. P. Kingma and M. Welling, ``Auto-encoding variational Bayes,'' 2013, arXiv:1312.6114. [Online]. Available: https://arxiv.org/abs/1312.6114
-\bibitem{b9} S. Liu, ``Wi-Fi Energy Detection Testbed (12MTC),'' 2023, gitHub repository. [Online]. Available: https://github.com/liustone99/Wi-Fi-Energy-Detection-Testbed-12MTC
-\bibitem{b10} ``Treatment episode data set: discharges (TEDS-D): concatenated, 2006 to 2009.'' U.S. Department of Health and Human Services, Substance Abuse and Mental Health Services Administration, Office of Applied Studies, August, 2013, DOI:10.3886/ICPSR30122.v2
-\bibitem{b11} K. Eves and J. Valasek, ``Adaptive control for singularly perturbed systems examples,'' Code Ocean, Aug. 2023. [Online]. Available: https://codeocean.com/capsule/4989235/tree
+\bibitem{b1} Esteva, A., Kuprel, B., Novoa, R. et al. Dermatologist-level classification of skin cancer with deep neural networks. \textit{Nature} \textbf{542}, 115--118 (2017). \url{https://doi.org/10.1038/nature21056}
+\bibitem{b2} Tschandl, P., Rosendahl, C. \& Kittler, H. The HAM10000 dataset, a large collection of multi-source dermatoscopic images of common pigmented skin lesions. \textit{Scientific Data} \textbf{5}, 180161 (2018). \url{https://doi.org/10.1038/sdata.2018.161}
+\bibitem{b3} Kassem, M. A., Hosny, K. M., Damaševičius, R. \& Eltoukhy, M. M. Machine learning and deep learning methods for skin lesion classification and diagnosis: A systematic review. \textit{Diagnostics} \textbf{11}(8), 1390 (2021). \url{https://doi.org/10.3390/diagnostics11081390}
+\bibitem{b4} Saputra, V. A., Devi, M. S. K., Diana \& Kurniawan, A. Comparative analysis of convolutional neural networks and vision transformers for dermatological image classification. \textit{Procedia Computer Science} \textbf{245}, 879--888 (2024). \url{https://doi.org/10.1016/j.procs.2024.10.315}
+\bibitem{b5} Aruk, I., Pacal, I. \& Toprak, A. N. A comprehensive comparison of convolutional neural network and visual transformer models on skin cancer classification. \textit{Computational Biology and Chemistry} \textbf{120}, 108713 (2026). \url{https://doi.org/10.1016/j.compbiolchem.2025.108713}
+\bibitem{b6} Mahbod, A., Tschandl, P., Langs, G., Ecker, R. \& Ellinger, I. The effects of skin lesion segmentation on the performance of dermatoscopic image classification. \textit{Computer Methods and Programs in Biomedicine} \textbf{197}, 105725 (2020). \url{https://doi.org/10.1016/j.cmpb.2020.105725}
+\bibitem{b7} Ecer, N., Kankılıç, A. T., Karakoyun, Ö. et al. Diagnostic performance and energy consumption of deep learning models for dermoscopic image classification. \textit{Discover Artificial Intelligence} \textbf{6}, 1530 (2026). \url{https://doi.org/10.1007/s44163-026-02558-5}
+\bibitem{b8} Fiaz, M., Shoaib Khan, M. B., Khan, A. H., Bilal, A., Abdullah, M., Darem, A. A. \& Sarwar, R. An explainable hybrid deep learning framework for precise skin lesion segmentation and multi-class classification. \textit{Frontiers in Medicine} \textbf{12}, 1681542 (2025). \url{https://doi.org/10.3389/fmed.2025.1681542}
 \end{thebibliography}
 
 \vspace{12pt}
