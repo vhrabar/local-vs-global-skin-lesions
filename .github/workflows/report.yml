@@ -2,7 +2,7 @@ name: report
 
 on:
   push:
-    branches: [main, report]
+    branches: [report]
     paths:
       - "report/**"
       - "!report/*.pdf"
