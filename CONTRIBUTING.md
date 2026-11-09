@@ -9,8 +9,8 @@ git clone https://github.com/vhrabar/local-vs-global-skin-lesions.git
 cd local-vs-global-skin-lesions
 
 uv sync --group dev --group cpu   # CPU (+ Apple MPS)
-uv sync --group dev --group cuda  # NVIDIA CUDA 13.2
-uv sync --group dev --group rocm  # AMD ROCm 7.14
+uv sync --group dev --group cuda  # NVIDIA CUDA 13.4
+uv sync --group dev --group rocm  # AMD ROCm 10.0
 
 # auto git hook config
 uv run pre-commit install
